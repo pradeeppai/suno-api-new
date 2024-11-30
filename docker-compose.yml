@@ -3,7 +3,10 @@ version: '3'
 services:
   suno-api:
     container_name: suno-api
-    build: .
+    build:
+      context: .
+      args:
+        COOKIE: ${COOKIE}
     ports:
       - "8000:8000"
     env_file:
